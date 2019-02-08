@@ -1,0 +1,24 @@
+<!--index.wxml-->
+<view class="container">
+
+  <!-- 用户 openid -->
+  <view class="userinfo">
+    <button open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" class="userinfo-avatar" style="background-image: url({{avatarUrl}})"></button>
+    <view>
+      <button class="userinfo-nickname" bindtap="onGetOpenid">点击获取 openid</button>
+    </view>
+  </view>
+
+  <button bindtap="createPost">Create a New Post</button>
+
+  <scroll-view wx:for="{{posts}}">
+    <view class="post-container">
+      <view class="upvote-container">
+        <image class="arrow" src="/images/up-arrow.png" bindtap="upvoted" id="{{index}}"></image>
+        <text>{{item.votes}}</text>
+        <image class="arrow" src="/images/down-arrow.png" bindtap="downvoted" id="{{index}}"></image>
+      </view>
+      <text>{{item.content}}</text>
+    </view>
+  </scroll-view>
+</view>

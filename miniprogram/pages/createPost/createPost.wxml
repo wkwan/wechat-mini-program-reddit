@@ -1,0 +1,5 @@
+<!--miniprogram/pages/createPost/createPost.wxml-->
+<form bindsubmit="submitPost">
+<input name="content" placeholder='Write stuff...'></input>
+<button form-type='submit'>Submit</button>
+</form>
